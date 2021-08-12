@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Georama:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Georama:wght@200;300&display=swap" rel="stylesheet">
+  <title>Mercadomuebles</title>
+</head>
+<body>
+  <header class="header">
+    <div>
+      <a href="./index.html"> <img src="./imagenes/mercadomuebles.jpg" alt="logomm" height="110vh"></a>
+    </div>
+    <nav>
+    <ul>
+      <li> 
+        <a href="./index.html" style="text-decoration:none">Inicio</a>
+      </li>
+      <li>
+        <a href="./quienessomos.html" style="text-decoration:none">Quiénes somos</a>
+      </li>
+      <li>
+        <a href="./productos.html" style="text-decoration:none">Productos</a>
+      </li>
+      <li>
+        <a href="./servicios.html" style="text-decoration:none">Servicios</a>
+      </li>
+      <li>
+        <a class="active" href="./contacto.html" style="text-decoration:none">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <form action="" name="formulario1"></form>
+   <fieldset class="formulario">
+     <script src="/contacto.js"></script>
+   <legend></legend>
+     <div class="texto">
+        <label for="nombre">Nombre y Apellido</label>
+        <input type="text" name="nombre" id="nombre" class="field">
+        <label for="celular">Teléfono</label>
+        <input type="text" name="celular" id="celular" class="field">
+        <label for="correo">Correo electrónico</label>
+        <input type="text" name="Correo electrónico" id="mail" class="field">
+     </div>
+     <div class="radio">
+      <div>
+        <label for="prod1">Producto 1 $300</label>
+        <input type="checkbox" name="prod" value="prod1" onclick="if (this.checked) sumar (this,300); else restar (this,300)">
+      </div>
+      <div>
+        <label for="prod2">Producto 2 $100</label>
+        <input type="checkbox" name="prod" value=prod2 onclick="if (this.checked) sumar(this,100); else restar (this,100)"> 
+      </div>
+      <div>
+        <label for="prod3">Producto 3 $200</label>
+        <input type="checkbox" name="prod" value="prod3" onclick="if (this.checked) sumar (this,200)">
+      </div>
+    </div>
+    </div>
+     <div class="boton">
+        <input type="submit" name="Solicitar Presupuesto" id="submit">
+        <input type="reset" name="reset" id="reset">
+     </div>
+  </fieldset>
+</main>
+</body>
+</html>

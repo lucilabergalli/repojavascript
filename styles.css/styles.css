@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Georama', sans-serif;
+}
+
+a:visited a:link {
+  text-decoration:none;
+}
+
+html {
+  font-size: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  color:rgba(0, 0, 0, 0.733);
+  margin: 0 10px 0 10px;
+  font-family: 'Roboto', sans-serif;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-family: 'Georama', sans-serif;
+  color: rgb(32, 32, 92);
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+li a:hover {
+  color: rgba(163, 13, 13, 0.932);
+}
+
+nav ul li a {
+  padding: 7px 7px;
+  border-radius: 3px;
+}
+
+a.active, a:hover {
+  background-color: rgba(224, 155, 155, 0.932);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.cuotasimg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h1 {
+display: flex;
+flex-direction: row;
+justify-content: center;
+color:rgb(32, 32, 92);
+font-weight: bolder;
+margin-bottom: 30px;
+background-image: url("../imagenes/madera2.jpg");
+padding: 70px;
+}
+
+h3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  background-color: rgb(32, 32, 92);
+  padding: 30px; 
+}
+
+/* h2:hover {
+  transform: scale(1.1,1.1);
+} */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  margin: 5vh;
+  text-align: center;
+  grid-template-areas:
+  'producto1 producto2 producto3 producto4';
+  grid-column-gap: 2vh;
+}
+
+.producto1 {
+  grid-area: producto1;
+  justify-items: stretch;
+}
+
+.producto2 {
+  grid-area: producto2;
+  justify-items: stretch;
+}
+
+.producto3 {
+  grid-area: producto3;
+  justify-items: stretch;
+}
+
+.producto4 {
+  grid-area: producto4;
+  justify-items: stretch;
+}
+
+
+footer {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to top, rgb(32, 32, 92), white);
+  justify-content: center;
+  color: white;
+  padding: 20px;
+  font-size: small;
+  justify-self: end;
+  margin-top: 30px;
+}
+
+
+/* PRODUCTOS */
+
+h2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  font-weight: bolder;
+  background-image: url("/imagenes/mdf.jpg");
+  padding: 50px; 
+}
+
+span {
+  font-weight: bold;
+}
+
+/* CONTACTO */
+.formulario {
+  padding: 20px;
+  line-height: 30px;
+}
+
+#mensaje {
+  height: 100px; 
+  width: 400px;
+  margin-top: 20px;
+}
