@@ -1,0 +1,36 @@
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  color:rgba(0, 0, 0, 0.733);
+  margin: 0 10px 0 10px;
+  font-family: 'Roboto', sans-serif;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-family: 'Georama', sans-serif;
+  color: rgb(32, 32, 92);
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+li a:hover {
+  color: rgba(163, 13, 13, 0.932);
+}
+
+nav ul li a {
+  padding: 7px 7px;
+  border-radius: 3px;
+}
+
+a.active, a:hover {
+  background-color: rgba(224, 155, 155, 0.932);
+  -webkit-transition: .5s;
+  transition: .5s;
+}

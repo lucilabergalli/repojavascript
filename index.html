@@ -7,19 +7,51 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
   <link href="https://fonts.googleapis.com/css2?family=Georama:wght@200&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css/styles.css">
+  <link rel="stylesheet" href="scss/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
   <link href="https://fonts.googleapis.com/css2?family=Georama:wght@200;300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/bootstrap-grid.css">
+  <link rel="stylesheet" href="./assets/css/bootstrap-reboot.css">
+  <link rel="stylesheet" href="./assets/css/bootstrap.css">
+  <link rel="stylesheet" href="./assets/js/bootstrap.bundle.js">
+  <link rel="stylesheet" href="./assets/js/bootstrap.js">
   <title>Mercadomuebles</title>
 </head>
 <body>
-  <script src="index.js"></script>
   <header class="header">
-    <div>
-      <a href="./index.html"> <img src="./imagenes/mercadomuebles.jpg" alt="logomm" height="110vh"></a>
-    </div>
-    <nav>
+    <nav class="navbar">
+      <a class="navbar-brand" href="./index.html">
+        <img src="./imagenes/mercadomuebles.jpg" width="100" height="100" alt="logomm" style="margin-top: 30px;">
+      </a>
+    </nav>
+    <!-- <div class="logo">
+      <a href="./index.html"> <img src="./imagenes/mercadomuebles.jpg" alt="logomm" height="150vh"></a>
+    </div> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light style="background-color: #e3f2fd;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./quienessomos.html">Quiénes Somos <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./productos.html">Productos <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./servicios.html">Servicios <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./contacto.html">Contacto <span class="sr-only">(current)</span></a>
+          </li>
+      </div>
+    </nav>
+    <!-- <nav>
     <ul>
       <li> 
         <a class="active" href="./index.html" style="text-decoration:none">Inicio</a>
@@ -37,40 +69,69 @@
         <a href="./contacto.html" style="text-decoration:none">Contacto</a>
       </li>
     </ul>
-  </nav>
+  </nav> -->
 </header>
 <main>
-    <section>
-      <div class="section__hero">
-        <img src="./imagenes/cover.png" alt="cover" width="100%">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="./imagenes/cimater.png" alt="First slide">
       </div>
-      <div class="cuotasimg">
-        <img src="./imagenes/cuptas.PNG" alt="cuotas">
+      <div class="carousel-item">
+        <img class="d-block w-100" src="./imagenes/road-238458_1920.jpg" alt="Second slide" height="500vh">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>HACEMOS ENVÍOS A TODO EL PAÍS</h3>
+        </div>
       </div>
-      <h1>LA MEJOR CALIDAD, AL MEJOR PRECIO</h1>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="./imagenes/BBVA-CompraOnline-0107-1920x1180.jpg" alt="Third slide" height="500vh">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>COMPRÁ ONLINE DESDE TU CASA</h3>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <section>
+    <div class="cuotasimg">
+      <img src="./imagenes/cuptas.PNG" alt="cuotas">
+    </div>
+    <h1>LA MEJOR CALIDAD, AL MEJOR PRECIO</h1>
     </section>
     <section>
-      <h3>PRODUCTOS DESTACADOS</h3>
+      <h3 class="text-white">PRODUCTOS DESTACADOS</h3>
       <div class="container">
         <div class="producto1">
-         <h5>Panel Ranurado Blanco 260x90cm</h5>
-         <img src="./imagenes/producto1.PNG" alt="panel ranurado" height="200vh" width="200vh">
-         <h5>$200</h5>
+          <h5>Panel Ranurado Blanco 260x90cm</h5>
+          <img src="./imagenes/producto1.PNG" alt="panel ranurado" height="200vh" width="200vh">
+          <h5>$200</h5>
         </div>
         <div class="producto2">
           <h5>Panel Ranurado Blanco exhibidor doble</h5>
-         <img src="./imagenes/producto2.PNG" alt="panel ranurado exhibidor" height="200vh" width="200vh">
-         <h5>$100</h5>
+          <img src="./imagenes/producto2.PNG" alt="panel ranurado exhibidor" height="200vh" width="200vh">
+          <h5>$100</h5>
         </div>
         <div class="producto3">
           <h5>Mesa De Tv Lcd - Modular</h5>
           <img src="./imagenes/producto3.PNG" alt="mesa tv" height="200vh" width="200vh">
-         <h5>$1000</h5>
+          <h5>$1000</h5>
         </div>
         <div class="producto4">
           <h5>Colchón 90x190x20 Cannon Princess 1 Plaza</h5>
           <img src="./imagenes/producto4.PNG" alt="princess1plaza" height="200vh" width="200vh">
-         <h5>$200</h5>
+          <h5>$200</h5>
         </div>
       </div>
     </section>
@@ -78,5 +139,10 @@
       <p>Mercadomuebles. Bahía Blanca 1777 - CABA. Desarrollado por LBWeb</p>
     </footer>
   </main>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="/javascript/index.js"></script>
 </body>
 </html>

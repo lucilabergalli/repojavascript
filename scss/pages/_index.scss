@@ -1,37 +1,23 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  font-family: 'Georama', sans-serif;
-}
+// .header {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content:space-between;
+//   align-items: center;
+//   color:rgba(0, 0, 0, 0.733);
+//   margin: 0 10px 0 10px;
+//   font-family: 'Roboto', sans-serif;
+//   flex-wrap: wrap;
+// }
 
-a:visited a:link {
-  text-decoration:none;
-}
-
-html {
-  font-size: 100%;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
-  align-items: center;
-  color:rgba(0, 0, 0, 0.733);
-  margin: 0 10px 0 10px;
-  font-family: 'Roboto', sans-serif;
-  flex-wrap: wrap;
-}
-
-nav ul {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  font-family: 'Georama', sans-serif;
-  color: rgb(32, 32, 92);
-  list-style: none;
-  flex-wrap: wrap;
-}
+// nav ul {
+//   display: flex;
+//   flex-direction: row;
+//   gap: 10px;
+//   font-family: 'Georama', sans-serif;
+//   color: rgb(32, 32, 92);
+//   list-style: none;
+//   flex-wrap: wrap;
+// }
 
 li a:hover {
   color: rgba(163, 13, 13, 0.932);
@@ -87,13 +73,15 @@ h3 {
   margin: 5vh;
   text-align: center;
   grid-template-areas:
-  'producto1 producto2 producto3 producto4';
+  'producto1 producto2 producto3 producto4'
+  'producto5 producto6 producto7 producto8';
   grid-column-gap: 2vh;
 }
 
 .producto1 {
   grid-area: producto1;
   justify-items: stretch;
+  margin-bottom: 10vh;
 }
 
 .producto2 {
@@ -111,6 +99,26 @@ h3 {
   justify-items: stretch;
 }
 
+.producto5 {
+  grid-area: producto5;
+  justify-items: stretch;
+}
+
+.producto6 {
+  grid-area: producto6;
+  justify-items: stretch;
+}
+
+.producto7 {
+  grid-area: producto7;
+  justify-items: stretch;
+}
+
+.producto8 {
+  grid-area: producto8;
+  justify-items: stretch;
+}
+
 
 footer {
   display: flex;
@@ -122,33 +130,4 @@ footer {
   font-size: small;
   justify-self: end;
   margin-top: 30px;
-}
-
-
-/* PRODUCTOS */
-
-h2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  color: white;
-  font-weight: bolder;
-  background-image: url("../imagenes/mdf.jpg");
-  padding: 50px; 
-}
-
-span {
-  font-weight: bold;
-}
-
-/* CONTACTO */
-.formulario {
-  padding: 20px;
-  line-height: 30px;
-}
-
-#mensaje {
-  height: 100px; 
-  width: 400px;
-  margin-top: 20px;
 }
