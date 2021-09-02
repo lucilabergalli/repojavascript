@@ -29,7 +29,7 @@ console.log (productos);
                                           <h6>${producto.color}</h6>
                                           <p class="card-text">${producto.precio}</p>
                                           <img src="${producto.imagen}" style= "height: 150px"></img>
-                                          <button id="${producto.id}" type="button" class="btn btn-info"> Comprar </button>
+                                          <button id="${producto.id}" type="button" class="btn btn-info"> Agregar al carrito </button>
                                         </div>
                                       </div>`);
   }
@@ -40,7 +40,7 @@ console.log (productos);
 // 
 
 const botones = $(".btn-info");
-console.log (botones);
+// console.log (botones);
 
 //
 
@@ -58,20 +58,28 @@ function agregarAlCarrito () {
   for (const producto of Carrito){
     innerCarrito += `<p>${producto.nombre} -${producto.precio}</p>`
   }
-
+  
   const divCarrito = document.getElementById("carrito")
   divCarrito.innerHTML = innerCarrito;
-
-  console.log ("Producto Agregado");
   
+  console.log ("Producto Agregado");
+
 }
+
+
+  
+
 
 for (const boton of botones){
   boton.addEventListener("click", agregarAlCarrito);
 }
 
+//
+$(document).ready(function() {
+  console.log('dom ready');
+});
 
-
+//
 
 // let button = document.getElementsByTagName ("button");
 // console.log (button.innerHTML);

@@ -17,17 +17,26 @@
 // })();
 
 
-let miFormulario = document.getElementById("formulario");
-miFormulario.addEventListener ("submit", validarFormulario);
-
-function validarFormulario(e){
-    e.preventDefault();
-    alert("Gracias por su consulta");    
+$(document).ready(function(){
+  $('#formulario').submit (function (){
+    alert ("Gracias por su consulta");
+  })
 }
+)
 
-function limpiarFormulario() {
-  document.getElementById("formulario").reset();
-}
+
+
+// let miFormulario = document.getElementById("formulario");
+// miFormulario.addEventListener ("submit", validarFormulario);
+
+// function validarFormulario(e){
+//     e.preventDefault();
+//     alert("Gracias por su consulta");    
+// }
+
+// function limpiarFormulario() {
+//   document.getElementById("formulario").reset();
+// }
 
 
 
