@@ -159,16 +159,13 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background: -webkit-gradient(linear, left bottom, left top, from(#20205c), to(white));
-  background: linear-gradient(to top, #20205c, white);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: white;
+  justify-items: center;
+  background-color: rgba(184, 178, 178, 0.604);
+  margin-top: 100px;
   padding: 20px;
-  font-size: small;
-  justify-self: end;
-  margin-top: 30px;
 }
 
 .header {
@@ -252,18 +249,7 @@ span {
   font-weight: bold;
 }
 
-.btn-info {
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.card {
+#productosContenedor {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,8 +257,14 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  color: #474343;
-  margin-bottom: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 img {

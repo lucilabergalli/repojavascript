@@ -121,13 +121,11 @@ h3 {
 
 
 footer {
-  display: flex;
-  flex-direction: row;
-  background: linear-gradient(to top, rgb(32, 32, 92), white);
-  justify-content: center;
-  color: white;
-  padding: 20px;
-  font-size: small;
-  justify-self: end;
-  margin-top: 30px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+justify-items: center;
+background-color: rgba(184, 178, 178, 0.604);
+margin-top: 100px;
+padding: 20px;
 }
