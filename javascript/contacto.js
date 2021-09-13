@@ -26,6 +26,9 @@ $(document).ready(function(){
 
 
 
+
+
+
 // let miFormulario = document.getElementById("formulario");
 // miFormulario.addEventListener ("submit", validarFormulario);
 

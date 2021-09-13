@@ -38,29 +38,43 @@ $(document).ready(function(){
     console.log (carrito);
     carritoTotal (carrito);
   }
+
+
+  $.get ("data/productos.json", function(datos, estado){
+    console.log(datos);
+    console.log(estado);
+    if(estado == "success") {
+      for(const infoJson of datos){
+        productos.push (new Producto (infoJson.id, infoJson.nombre, infoJson.color, infoJson.precio, infoJson.imagen, infoJson.categoria, infoJson.cantidad));
+      }
+    }
+    console.log(productos);
+    
+    productostodos(productos, '#productosContenedor');
+  });
 });
   
-  productos.push (new Producto (1, "Panel Ranurado 260x90cm", "Blanco",500, "imagenes/producto1.png", categorias[0]));
-  productos.push (new Producto (2, "Mesa De Tv Lcd - Modular", "Wengue", 1200, "imagenes/producto3.png", categorias [2]));
-  productos.push (new Producto (3, "Panel Ranurado exhibidor doble", "Blanco", 30000, "imagenes/producto2.png", categorias[0]));
-  productos.push (new Producto (4, "Placa MDF de 18mm. 2,75 x 1,83 mts", "Crudo", 200, "imagenes/placamdf.png", categorias[0]));
-  productos.push (new Producto (5, "Mostrador Ciego", "Blanco", "4500", "imagenes/mostradorciego.png", categorias[2]));
-  productos.push (new Producto (6, "Sommier Cannon Exclusive 1 1/2 plaza 190x100cm", "Blanco", 40000, "imagenes/sommiercannonexclusive.png", categorias[1]));
-  productos.push (new Producto (7, "Sommier y Colchón King 2x2 Cannon", "Blanco", 70000, "imagenes/kingcannon.png", categorias[1]));
-  productos.push (new Producto (8, "Colchón Cannon Queen (2 plazas)", "Blanco", 3000, "imagenes/producto4.png", categorias[1]));
-  productos.push (new Producto (9, "Sommier y Colchón King 2x2 Cannon Renovation", "Blanco", 83000, "imagenes/sommierrenovation.png", categorias[1]));
-  productos.push (new Producto (10, "Sommier y Colchón King 2x2 Cannon Sublime", "Blanco", 108000, "imagenes/sommiersublime.png", categorias[1]));
-  productos.push (new Producto (11, "Placa MDF 9mm", "Blanco", 2500, "imagenes/placamdf9mm.png", categorias[0]));
-  productos.push (new Producto (12, "Placa melamina 18mm", "Blanco", 5000, "imagenes/melamina.png", categorias[0]));
-  productos.push (new Producto (13, "Biblioteca 10 cubos)", "Negra", 6600, "imagenes/bibliotecanegra.png", categorias[2]));
-  productos.push (new Producto (14, "Biblioteca Maxi Organizador", "Blanco", 7700, "imagenes/biblioteca.png", categorias[2]));
-  productos.push (new Producto (15, "Mesa de luz 2 cajones", "Wengue", 4000, "imagenes/mesaluz.png", categorias[2]));
-  productos.push (new Producto (16, "Cajonera 3 cajones", "Negro", 6000, "imagenes/cajonera.png", categorias[2]));
-  productos.push (new Producto (17, "Mesa de luz 1 cajón", "Wengue", 3500, "imagenes/mesaluz2.png", categorias[2]));
+  // productos.push (new Producto (1, "Panel Ranurado 260x90cm", "Blanco",500, "imagenes/producto1.png", categorias[0]));
+  // productos.push (new Producto (2, "Mesa De Tv Lcd - Modular", "Wengue", 1200, "imagenes/producto3.png", categorias [2]));
+  // productos.push (new Producto (3, "Panel Ranurado exhibidor doble", "Blanco", 30000, "imagenes/producto2.png", categorias[0]));
+  // productos.push (new Producto (4, "Placa MDF de 18mm. 2,75 x 1,83 mts", "Crudo", 200, "imagenes/placamdf.png", categorias[0]));
+  // productos.push (new Producto (5, "Mostrador Ciego", "Blanco", "4500", "imagenes/mostradorciego.png", categorias[2]));
+  // productos.push (new Producto (6, "Sommier Cannon Exclusive 1 1/2 plaza 190x100cm", "Blanco", 40000, "imagenes/sommiercannonexclusive.png", categorias[1]));
+  // productos.push (new Producto (7, "Sommier y Colchón King 2x2 Cannon", "Blanco", 70000, "imagenes/kingcannon.png", categorias[1]));
+  // productos.push (new Producto (8, "Colchón Cannon Queen (2 plazas)", "Blanco", 3000, "imagenes/producto4.png", categorias[1]));
+  // productos.push (new Producto (9, "Sommier y Colchón King 2x2 Cannon Renovation", "Blanco", 83000, "imagenes/sommierrenovation.png", categorias[1]));
+  // productos.push (new Producto (10, "Sommier y Colchón King 2x2 Cannon Sublime", "Blanco", 108000, "imagenes/sommiersublime.png", categorias[1]));
+  // productos.push (new Producto (11, "Placa MDF 9mm", "Blanco", 2500, "imagenes/placamdf9mm.png", categorias[0]));
+  // productos.push (new Producto (12, "Placa melamina 18mm", "Blanco", 5000, "imagenes/melamina.png", categorias[0]));
+  // productos.push (new Producto (13, "Biblioteca 10 cubos)", "Negra", 6600, "imagenes/bibliotecanegra.png", categorias[2]));
+  // productos.push (new Producto (14, "Biblioteca Maxi Organizador", "Blanco", 7700, "imagenes/biblioteca.png", categorias[2]));
+  // productos.push (new Producto (15, "Mesa de luz 2 cajones", "Wengue", 4000, "imagenes/mesaluz.png", categorias[2]));
+  // productos.push (new Producto (16, "Cajonera 3 cajones", "Negro", 6000, "imagenes/cajonera.png", categorias[2]));
+  // productos.push (new Producto (17, "Mesa de luz 1 cajón", "Wengue", 3500, "imagenes/mesaluz2.png", categorias[2]));
   
-  console.log (productos);
+  // console.log (productos);
   
-  productostodos(productos, '#productosContenedor');
+
     
 
 
