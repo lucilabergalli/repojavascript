@@ -267,6 +267,14 @@ span {
       flex-wrap: wrap;
 }
 
+td {
+  padding: 5px;
+}
+
+th {
+  padding-bottom: 10px;
+}
+
 img {
   margin-bottom: 50px;
 }

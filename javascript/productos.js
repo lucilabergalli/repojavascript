@@ -1,6 +1,6 @@
 const productos = [];
 const categorias = ["Placas", "Colchones", "Muebles"];
-
+const carrito = [];
 
 class Producto {
   constructor (id, nombre, color, precio, imagen, categoria, cantidad) {
@@ -14,26 +14,26 @@ class Producto {
   }
 
     agregarCantidad (valor) {
-    this.cantidad += valor;
+    this.cantidad = this.cantidad + valor;
   }
 
     subtotal() {
       return this.cantidad * this.precio;
   }
 
-  //   restarCantidad (valor){
-  //   this.cantidad -= valor;
-  // }
+    restarCantidad (valor){
+    this.cantidad -= valor;
+  }
 }
 
 
 $(document).ready(function(){
- $('#prod-carrito').show();
+ $('#cart-nav-btn').show();
 
-  if ("Carrito" in localStorage){
-    const storageDom = JSON.parse (localStorage.getItem("Carrito"))
-    for(const infoJson of storageDom) {
-      Carrito.push(new Producto (infoJson.id, infoJson.nombre, infoJson.color, infoJson.precio, infoJson.imagen, infoJson.categoria, infoJson.cantidad));
+  if ("carrito" in localStorage){
+    const storageDom = JSON.parse (localStorage.getItem("carrito"))
+    for(const producto of storageDom) {
+      carrito.push(new Producto (producto.id, producto.nombre, producto.color, producto.precio, producto.imagen, producto.categoria, producto.cantidad));
     }
     console.log (carrito);
     carritoTotal (carrito);
@@ -63,9 +63,6 @@ $(document).ready(function(){
   productostodos(productos, '#productosContenedor');
     
 
-
-const carrito = [];
-
 function productostodos(productos, id){
   $(id).empty()
   for (const producto of productos){
@@ -83,7 +80,6 @@ function productostodos(productos, id){
                   </div>`);
   }
 }
-
 
 
 
@@ -113,69 +109,74 @@ function carritoTotal(productos){
   $('#carrito').empty();
 
   for (const producto of productos){
-    $('#carrito').append(registroCarrito(producto));
+  $('#carrito').append(registroCarrito(producto));
   }
 
-  $("#carrito").append(`<p id="totalCarrito"><strong> TOTAL ${totalCarrito(productos)}</strong></p>`);
+  $("#carrito").append(`<p id="totalCarrito"><strong> TOTAL $ ${totalCarrito(productos)}</strong></p>`);
 
   $("#carrito").append(`<div id="divConfirmar" class="text-center"><button id="btnConfirmar" class="btn btn-success btn-block">Confirmar Compra</button></div>`);
 
 
-  $(".add-prod").click(sumarProductos);
-  $(".restar-prod").click(restarProductos);
+  $(".addBoton").click(sumarProductos);
+  $(".deleteBoton").click(restarProductos);
   $(".borrar-prod").click(eliminarCarrito);
   $("#btnConfirmar").click(confirmarCompra);
 }
 
 
-function sumarProductos() {
-
-  let producto = carrito.find(p => p.id == this.id);
-  producto.agregarCantidad(1);
-
-  $(this).parent().children()[1].innerHTML = producto.cantidad;
-  $(this).parent().children()[2].innerHTML = producto.subtotal();
-
-
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+function sumarProductos(e) {
+  e.preventDefault();
+	let seleccionado = carrito.filter(prod => prod.id == e.target.id);
+	for (producto of seleccionado) {
+		producto.cantidad += 1;
+	}
+	carritoTotal(carrito);
+	localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
 function eliminarCarrito(e) {
-  console.log(e.target.id);
   let posicion = carrito.findIndex(p => p.id == e.target.id);
   carrito.splice(posicion, 1);
   console.log(carrito);
 
   carritoTotal(carrito);
 
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+  localStorage.setItem("Carrito", JSON.stringify(carrito));
 }
 
 
 
 
-
-function restarProductos () {
-  let producto = carrito.find(p => p.id == this.id);
-  producto.restarCantidad(1);
-  $(this).parent().children()[1].innerHTML = producto.cantidad;
-
-   carritoTotal(carrito);
-
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+function restarProductos (e) {
+  	e.preventDefault();
+	let productoCarrito = carrito.filter(prod => prod.id == e.target.id);
+	for (producto of productoCarrito) {
+		if (producto.cantidad > 1) {
+			producto.cantidad--
+		}
+	}
+	carritoTotal(carrito);
 }
+
+
 
 
 function registroCarrito (producto){
-  return `<tr>
-          <td>${producto.nombre}</td>
-          <td>${producto.precio}</td>
-          <td class="badge bg-warning">${producto.cantidad}</td>
-          <td> Subtotal: $ ${producto.subtotal()}</td>
-          <td id="${producto.id}"><button class="add-prod btn btn-success"><i class="fas fa-plus-circle"></i></button></td>
-          <td id="${producto.id}"><button class="restar-prod btn btn-secondary"><i class="fas fa-minus-circle"></i></button></td>
-          <td id="${producto.id}"><button class="borrar-prod btn btn-danger">Eliminar producto</button></td>
-          </tr>`;
+  return `<table>
+          <tr>
+            <td> ${producto.nombre}</td>
+            <td> $ ${producto.precio}</td>
+            <td class="badge bg-warning"> ${producto.cantidad} </td>
+            <td>
+            <button class="addBoton btn btn-success"><i class="fas fa-plus-circle" id="${producto.id}"></i></button>
+            <button class="deleteBoton btn btn-secondary"><i class="fas fa-minus-circle" id="${producto.id}"></i></button>
+            <button class="borrar-prod btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            </td>
+          </tr>  
+          <tfoot>
+            <th> Subtotal: $ ${producto.subtotal()}</th>
+          </tfoot>
+          </table>`;
 }
 
 
@@ -200,7 +201,7 @@ function totalCarrito(carrito) {
   console.log(carrito);
   let total = 0;
   carrito.forEach(p => total += p.subtotal());
-  return total.toFixed(2);
+  return total.toFixed(1);
 }
 
 
