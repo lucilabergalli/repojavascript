@@ -20,7 +20,7 @@ nav ul {
 }
 
 li a:hover {
-  color: rgba(163, 13, 13, 0.932);
+  color: rgb(130, 130, 163);
 }
 
 nav ul li a {
@@ -29,7 +29,7 @@ nav ul li a {
 }
 
 a.active, a:hover {
-  background-color: rgba(224, 155, 155, 0.932);
+  background-color: rgb(130, 130, 163);
   -webkit-transition: .5s;
   transition: .5s;
 }
@@ -41,7 +41,7 @@ h2 {
   justify-content: center;
   color: white;
   font-weight: bolder;
-  background-color: cadetblue;
+  background-color: rgb(130, 130, 163);
   padding: 50px; 
 }
 
@@ -97,4 +97,76 @@ th {
 
 img {
   margin-bottom: 50px;
+}
+
+.cart {
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-top: 0px;
+  margin-bottom: 70px;
+  margin-right: 600px;
+  background: rgb(130, 130, 163);
+ }
+
+.cartNombre  {
+  color: rgb(130, 130, 163);
+  display: flex;
+  justify-content: left;
+  padding: 10px;
+  // margin-top: 40px;
+  // margin-bottom: 0px;
+  // margin-right: 400px;
+  // margin-left: 20px;
+}
+
+
+.open-modal {
+  font-weight: bold;
+  background: var(--blue);
+  color: var(--white);
+  padding: .75rem 1.75rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.modal { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--black);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+}
+
+.modal-dialog {
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 5px;
+  background: var(--white);
+  overflow: auto;
+  cursor: default;
+}
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+}
+
+.modal.is-visible {
+  visibility: visible;
+  opacity: 1;
 }

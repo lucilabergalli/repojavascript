@@ -35,7 +35,19 @@ a.active, a:hover {
   transition: .5s;
 }
 
+
 .container {
   display: grid;
   grid-template-columns: 2fr;
+  grid-template-areas: 'container1 container2';
+}
+
+.container1 {
+  grid-area: container1;
+  justify-items: stretch;
+}
+
+.container2 {
+  grid-area: container2;
+  justify-items: stretch;
 }

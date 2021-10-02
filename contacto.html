@@ -38,9 +38,6 @@
             <a class="nav-link" href="./index.html">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="./quienessomos.html">Quiénes Somos <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
             <a class="nav-link" href="./productos.html">Productos <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
@@ -50,12 +47,13 @@
     </nav>
 </header>
 <main>
-  <div class="container">
+</main>
+<div class="container">
     <div class="container1">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.46594096918!2d-58.49543258502042!3d-34.61766388045594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9db11f114c7%3A0x455bd0ad26b3305d!2sMercadomuebles!5e0!3m2!1ses-419!2sar!4v1629900508563!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
     <div class="container2">
-      <form id="formulario" class="needs-validation" novalidate>
+      <form method="POST" id="formulario" name="contactForm" class="contactForm">
         <div class="form-row">
           <div class="col-12 .col-md-8">
             <label for="validationCustom01">Nombre</label>
@@ -90,38 +88,6 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="./javascript/contacto.js"></script>
-  <!-- <form action="" name="formulario1"></form>
-   <fieldset class="formulario">
-     <script src="javascript/contacto.js"></script>
-   <legend></legend>
-     <div class="texto">
-        <label for="nombre">Nombre y Apellido</label>
-        <input type="text" name="nombre" id="nombre" class="field">
-        <label for="celular">Teléfono</label>
-        <input type="text" name="celular" id="celular" class="field">
-        <label for="correo">Correo electrónico</label>
-        <input type="text" name="Correo electrónico" id="mail" class="field">
-     </div>
-     <div class="radio">
-      <div>
-        <label for="prod1">Producto 1 $300</label>
-        <input type="checkbox" name="prod" value="prod1" onclick="if (this.checked) sumar (this,300); else restar (this,300)">
-      </div>
-      <div>
-        <label for="prod2">Producto 2 $100</label>
-        <input type="checkbox" name="prod" value=prod2 onclick="if (this.checked) sumar(this,100); else restar (this,100)"> 
-      </div>
-      <div>
-        <label for="prod3">Producto 3 $200</label>
-        <input type="checkbox" name="prod" value="prod3" onclick="if (this.checked) sumar (this,200)">
-      </div>
-    </div>
-    </div>
-     <div class="boton">
-        <input type="submit" name="Solicitar Presupuesto" id="submit">
-        <input type="reset" name="reset" id="reset">
-     </div>
-  </fieldset> -->
 </main>
 </body>
 </html>
